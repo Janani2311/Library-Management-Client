@@ -65,19 +65,28 @@ const AddBooks = () => {
                         <h1 className="font-sans text-3xl hover:subpixel-antialiased font-weight:600 text-sky-800">Add Book</h1>
                       </div>
                       <Form>
+
+                      {['title', 'author', 'description', 'isbn', 'publishedDate', 'publisher', 'pageCount', 'language', 'genre', 'numBooksAvailable'].map((field) => (  
+                          <React.Fragment key={field}>  
+                              <label className={styles.label}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>  
+                              <Field className={styles.field} id={field} name={field} as={field === 'description' ? 'textarea' : undefined} />  
+                              <ErrorMessage component='div' className={styles.errorMsg} name={field} />  
+                          </React.Fragment>  
+                      ))}  
                           <label className={styles.label}>
                           Title
                           </label>
                           <Field className={styles.field} id='title' name='title' 
                           />
-                          <ErrorMessage component='a' className={styles.errorMsg} name='title' />
+                          <ErrorMessage component='div' className={styles.errorMsg} name='title' />
+                            
 
                           <label className={styles.label}>
                           Author
                           </label>
                           <Field className={styles.field} id='author' name='author'
                           />
-                          <ErrorMessage component='a' className={styles.errorMsg} name='author' />
+                          <ErrorMessage component='div' className={styles.errorMsg} name='author' />
 
 
                           <label className={styles.label}>
@@ -85,13 +94,13 @@ const AddBooks = () => {
                           </label>
                           <Field as="textarea" className={styles.field} id='description' name='description'
                               />
-                          <ErrorMessage component='a' className={styles.errorMsg} name='description' />
+                          <ErrorMessage component='div' className={styles.errorMsg} name='description' />
                           
                          
                           <Field className={styles.field} id='image' name='image' component={FileUpload}
                          />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='image'
                           />
@@ -102,7 +111,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='isbn ' name='isbn' 
                          />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='isbn'
                           />
@@ -113,7 +122,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='publishedDate' name='publishedDate' 
                            />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='publishedDate'
                           />
@@ -124,7 +133,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='publisher' name='publisher' 
                            />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='publisher'
                           />
@@ -135,7 +144,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='pageCount' name='pageCount' 
                            />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='pageCount'
                           />
@@ -146,7 +155,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='language' name='language' 
                            />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='language'
                           />
@@ -157,7 +166,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='genre' name='genre' 
                            />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='genre'
                           />
@@ -168,7 +177,7 @@ const AddBooks = () => {
                           <Field className={styles.field} id='numBooksAvailable' name='numBooksAvailable' 
                            />
                           <ErrorMessage
-                          component='a'
+                          component='div'
                           className={styles.errorMsg}
                           name='numBooksAvailables'
                           />
