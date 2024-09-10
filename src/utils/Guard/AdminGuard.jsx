@@ -7,3 +7,8 @@ export default function AdminGuard({children}) {
     
     return role==='Admin'?children:<Navigate to='/login'/>
 }
+
+AdminGuard.propTypes = {  
+    children: PropTypes.node.isRequired,  
+};  
+ 
