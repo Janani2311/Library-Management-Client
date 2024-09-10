@@ -60,6 +60,7 @@ const AddBooks = () => {
                       onSubmit={handleSubmit}  
                   >  {({values}) => (
                     <div className="flex flex-col  md:flex-row flex-nowrap w-full">
+                      <React.Fragment>
                       <div className='w-full md:w-1/3 p-4'>
                       <div className="d-sm-flex align-items-center justify-content-between mt-5">
                         <h1 className="font-sans text-3xl hover:subpixel-antialiased font-weight:600 text-sky-800">Add Book</h1>
@@ -196,6 +197,7 @@ const AddBooks = () => {
                             <Feed formData={values}/>
                         </div>
                       </div>
+                      </React.Fragment>
                   </div>
                     )}  
                   </Formik>
