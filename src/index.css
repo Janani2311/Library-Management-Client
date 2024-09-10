@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --bg-image: url('/images/lib-bg.jpg');
+  }
+
+
+.bg-home-img{
+    background-image: var(--bg-image) !important;
+}
+
+    

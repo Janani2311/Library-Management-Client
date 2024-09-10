@@ -1,0 +1,15 @@
+.card {
+    height: 450px;
+    min-height: 450px; /* Adjust the min-height as needed */
+  }
+
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  .card-body {
+    flex-grow: 1;
+  }
