@@ -2,23 +2,34 @@ import React, { useState } from 'react';
 
 function FileUpload(props) {  
   const { field, form } = props;  
-  const [isFileUpload, setIsFileUpload] = useState(true); // State to toggle between file upload and URL input  
+  const [isFileUpload, setIsFileUpload] = useState(true); 
   const defaultImageUrl = '/books/dummy.jpeg';
 
   const handleFileChange = (e) => {  
     const file = e.currentTarget.files[0];  
-    const reader = new FileReader();  
-
-    reader.onload = function (event) {  
-      form.setFieldValue(field.name, event.target.result); // Set the Data URL  
-    };  
 
     if (file) {  
+      const reader = new FileReader();  
+      reader.onload = (event) => {  
+        form.setFieldValue(field.name, event.target.result); // Set the file preview  
+      };  
       reader.readAsDataURL(file);  
     } else {  
       form.setFieldValue(field.name, null);  
     }  
   };  
+   // const reader = new FileReader();  
+
+  //   reader.onload = function (event) {  
+  //     form.setFieldValue(field.name, event.target.result); // Set the Data URL  
+  //   };  
+
+  //   if (file) {  
+  //     reader.readAsDataURL(file);  
+  //   } else {  
+  //     form.setFieldValue(field.name, null);  
+  //   }  
+  // };  
 
   const handleUrlChange = (e) => {  
     form.setFieldValue(field.name, e.target.value); // Set the URL directly  
@@ -47,7 +58,9 @@ function FileUpload(props) {
             className={'form-control'}  
             accept="image/*"  
           />  
-          <img src={field.value || defaultImageUrl} alt="preview" id={'image'} className="mt-2" />  
+          <img src={field.value || defaultImageUrl} alt="preview" id={'image'} className="mt-2"
+          onError={(e) => { e.target.onerror = null; e.target.src = defaultImageUrl;}}
+           />  
         </div>  
       ) : (  
         <div className='mt-1'>  
@@ -57,7 +70,8 @@ function FileUpload(props) {
             onChange={handleUrlChange}  
             className={'form-control'}  
           /> 
-          <img src={field.value || defaultImageUrl} alt="preview" id={'image'} className="mt-2" />   
+          <img src={field.value || defaultImageUrl} alt="preview" id={'image'} className="mt-2"
+           onError={(e) => { e.target.onerror = null; e.target.src = defaultImageUrl;}} />   
         </div>  
       )}  
     </div>  
