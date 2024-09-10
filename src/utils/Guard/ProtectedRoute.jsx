@@ -7,7 +7,5 @@ function ProtectedRoute({children}) {
     return token?children:<Navigate to='/login'/>
 }
 
-ProtectedRoute.propTypes = {  
-    children: PropTypes.node.isRequired,  
-}; 
+
 export default ProtectedRoute

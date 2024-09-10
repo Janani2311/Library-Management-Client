@@ -54,13 +54,11 @@ export default [
         path:'/addBooks',
        // element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><AddBooks/></div></ProtectedRoute></AdminGuard>
         element:
-            <AdminGuard>  
-                <ProtectedRoute>  
+            <AdminGuard>   
                     <div className="flex flex-row gap-x-4 bg-[#f0eeee]">  
                         <Sidebar />  
                         <AddBooks />  
-                    </div>  
-                </ProtectedRoute>  
+                    </div>   
             </AdminGuard>  
         
     },
@@ -69,21 +67,13 @@ export default [
         element:<ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><ViewBooks/></div></ProtectedRoute>
     },
     {
-        // path:'/updateBooks',
-        // element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><UpdateBookInfo/></div></ProtectedRoute></AdminGuard>,
-        // children:[{
-        //     path:'/updateBooks/updation',
-        //     element:<UpdationForm/>
-        // }]
         path: '/updateBooks',  
         element: (  
         <AdminGuard>  
-            <ProtectedRoute>  
                 <div className="flex flex-row gap-x-4 bg-[#f0eeee]">  
                     <Sidebar />  
                     <UpdateBookInfo />  
-                </div>  
-            </ProtectedRoute>  
+                </div>   
         </AdminGuard>  
         ),  
         children: [  
