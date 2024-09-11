@@ -15,11 +15,7 @@ function Feed({ formData }) {
         <CardMedia  
           className="h-40"  
           image={formData.image || '/books/dummy.jpeg'}   
-          title={formData.title || 'Book Image'}  
-          onError={(e) => {  
-            e.target.onerror = null; // prevents looping  
-            e.target.src = '/images/dummy.jpeg'; // fallback  
-          }}   
+          title={formData.title || 'Book Image'}   
         />  
         <CardContent className="p-4">  
             {[  

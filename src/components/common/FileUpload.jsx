@@ -17,25 +17,14 @@ function FileUpload(props) {
     } else {  
       form.setFieldValue(field.name, null);  
     }  
-  };  
-   // const reader = new FileReader();  
-
-  //   reader.onload = function (event) {  
-  //     form.setFieldValue(field.name, event.target.result); // Set the Data URL  
-  //   };  
-
-  //   if (file) {  
-  //     reader.readAsDataURL(file);  
-  //   } else {  
-  //     form.setFieldValue(field.name, null);  
-  //   }  
-  // };  
+  }; 
 
   const handleUrlChange = (e) => {  
     form.setFieldValue(field.name, e.target.value); // Set the URL directly  
   };  
 
-  return (  
+  return <>
+  <React.Fragment>
     <div>  
       <label className="block text-gray-700 text-sm font-bold pt-2 pb-1">  
         Upload Image/ Enter URL  
@@ -75,7 +64,8 @@ function FileUpload(props) {
         </div>  
       )}  
     </div>  
-  );  
+    </React.Fragment>
+  </>  
 }  
 
 export default FileUpload;  

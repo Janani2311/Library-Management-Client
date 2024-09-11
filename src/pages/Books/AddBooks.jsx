@@ -100,11 +100,11 @@ const AddBooks = () => {
                          
                           <Field className={styles.field} id='image' name='image' component={FileUpload}
                          />
-                          <ErrorMessage
+                          {/* <ErrorMessage
                           component='div'
                           className={styles.errorMsg}
                           name='image'
-                          />
+                          /> */}
 
                           <label className={styles.label}>
                           ISBN
