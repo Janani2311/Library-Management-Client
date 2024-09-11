@@ -87,14 +87,13 @@ export default [
     },
     {
       path: "/addBooks",
-      element: (
-        
-            <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+      element: <>
+      
+      <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
               <Sidebar />
               <AddBooks />
             </div>
-        
-      ),
+      </>
     },
     {
       path: "/viewBooks",
@@ -109,20 +108,12 @@ export default [
     },
     {
       path: "/updateBooks",
-      element: (
-       
-          <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+      element: <>
+      <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
             <Sidebar />
             <UpdateBookInfo />
           </div>
-       
-      ),
-      children: [
-        {
-          path: "/updateBooks/updation",
-          element: <UpdationForm />,
-        },
-      ],
+      </>
     },
     {
       path: "/updateReviews",
