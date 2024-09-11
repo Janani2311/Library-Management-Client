@@ -111,11 +111,11 @@ export default [
         path: "/updateBooks",
         element: (
             <>
-            <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
-                <Sidebar />
-                <UpdateBookInfo />
-            </div>
-        </>
+                <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+                    <Sidebar />
+                    <UpdateBookInfo />
+                </div>
+            </>
         )
     },
     {
