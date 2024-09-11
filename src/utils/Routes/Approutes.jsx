@@ -52,8 +52,8 @@ export default [
     },
     {
         path:'/addBooks',
-       // element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><AddBooks/></div></ProtectedRoute></AdminGuard>
-        element:<h1>Welcome</h1>
+        element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><AddBooks/></div></ProtectedRoute></AdminGuard>
+        //element:<h1>Welcome</h1>
          
     },
     {
