@@ -23,89 +23,179 @@ import AdminGuard from "../Guard/AdminGuard";
 
 export default [
     {
-        path:'/',
-        element:[<TopNav/>,<HomePage/>]
+      path: "/",
+      element: (
+        <>
+          <TopNav />
+          <HomePage />
+        </>
+      ),
     },
     {
-        path:'/login',
-        element:[<TopNav/>,<Login/>]
+      path: "/login",
+      element: (
+        <>
+          <TopNav />
+          <Login />
+        </>
+      ),
     },
     {
-        path:'/activelogin',
-        element:[<TopNav/>,<ActivationLogin/>]
+      path: "/activelogin",
+      element: (
+        <>
+          <TopNav />
+          <ActivationLogin />
+        </>
+      ),
     },
     {
-        path:'/signup',
-        element:[<TopNav/>,<Signup/>]
+      path: "/signup",
+      element: (
+        <>
+          <TopNav />
+          <Signup />
+        </>
+      ),
     },
     {
-        path:'/forgotpwdcheck',
-        element:[<TopNav/>,<ForgotPasswordEmailCheck/>]
+      path: "/forgotpwdcheck",
+      element: (
+        <>
+          <TopNav />
+          <ForgotPasswordEmailCheck />
+        </>
+      ),
     },
     {
-        path:'/forgotpassword',
-        element:[<TopNav/>,<ForgotPassword/>]
+      path: "/forgotpassword",
+      element: (
+        <>
+          <TopNav />
+          <ForgotPassword />
+        </>
+      ),
     },
     {
-        path:'/adminDashboard',
-        element:<div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><AdminDashboard/></div>
+      path: "/adminDashboard",
+      element: (
+        <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+          <Sidebar />
+          <AdminDashboard />
+        </div>
+      ),
     },
     {
-        path:'/addBooks',
-        element:(
+      path: "/addBooks",
+      element: (
         <AdminGuard>
-            <ProtectedRoute>
-                <div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><AddBooks/></div>
-            </ProtectedRoute>
+          <ProtectedRoute>
+            <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+              <Sidebar />
+              <AddBooks />
+            </div>
+          </ProtectedRoute>
         </AdminGuard>
-        )
-        //element:<h1>Welcome</h1>
-         
+      ),
     },
     {
-        path:'/viewBooks',
-        element:<ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><ViewBooks/></div></ProtectedRoute>
+      path: "/viewBooks",
+      element: (
+        <ProtectedRoute>
+          <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+            <Sidebar />
+            <ViewBooks />
+          </div>
+        </ProtectedRoute>
+      ),
     },
     {
-        path: '/updateBooks',  
-        element: (  
-        <AdminGuard>  
-                <div className="flex flex-row gap-x-4 bg-[#f0eeee]">  
-                    <Sidebar />  
-                    <UpdateBookInfo />  
-                </div>   
-        </AdminGuard>  
-        ),  
-        children: [  
-            {  
-                path: '/updateBooks/updation',  
-                element: <UpdationForm />  
-            }  
-        ] 
+      path: "/updateBooks",
+      element: (
+        <AdminGuard>
+          <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+            <Sidebar />
+            <UpdateBookInfo />
+          </div>
+        </AdminGuard>
+      ),
+      children: [
+        {
+          path: "/updateBooks/updation",
+          element: <UpdationForm />,
+        },
+      ],
     },
     {
-        path:'/updateReviews',
-        element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><UpdateReviews/></div></ProtectedRoute></AdminGuard>
+      path: "/updateReviews",
+      element: (
+        <AdminGuard>
+          <ProtectedRoute>
+            <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+              <Sidebar />
+              <UpdateReviews />
+            </div>
+          </ProtectedRoute>
+        </AdminGuard>
+      ),
     },
     {
-        path:'/borrow',
-        element:<ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><BookBorrowing/></div></ProtectedRoute>
+      path: "/borrow",
+      element: (
+        <ProtectedRoute>
+          <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+            <Sidebar />
+            <BookBorrowing />
+          </div>
+        </ProtectedRoute>
+      ),
     },
     {
-        path:'/return',
-        element:<ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><BookReturn/></div></ProtectedRoute>
+      path: "/return",
+      element: (
+        <ProtectedRoute>
+          <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+            <Sidebar />
+            <BookReturn />
+          </div>
+        </ProtectedRoute>
+      ),
     },
     {
-        path:'/bookNotify',
-        element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><BookAdminDashboard/></div></ProtectedRoute></AdminGuard>
+      path: "/bookNotify",
+      element: (
+        <AdminGuard>
+          <ProtectedRoute>
+            <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+              <Sidebar />
+              <BookAdminDashboard />
+            </div>
+          </ProtectedRoute>
+        </AdminGuard>
+      ),
     },
     {
-        path:'/userprofile',
-        element:<ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><UserProfile/></div></ProtectedRoute>
+      path: "/userprofile",
+      element: (
+        <ProtectedRoute>
+          <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+            <Sidebar />
+            <UserProfile />
+          </div>
+        </ProtectedRoute>
+      ),
     },
     {
-        path:'/userdashboard',
-        element:<AdminGuard><ProtectedRoute><div className="flex flex-row gap-x-4 bg-[#f0eeee]"><Sidebar/><UserDashboard/></div></ProtectedRoute></AdminGuard>
-    }
-   
-]
+      path: "/userdashboard",
+      element: (
+        <AdminGuard>
+          <ProtectedRoute>
+            <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
+              <Sidebar />
+              <UserDashboard />
+            </div>
+          </ProtectedRoute>
+        </AdminGuard>
+      ),
+    },
+];
