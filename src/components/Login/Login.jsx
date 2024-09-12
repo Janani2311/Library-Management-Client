@@ -32,7 +32,7 @@ const LoginPage = () => {
                 let res = await AxiosService.post(`${ApiRoutes.SIGNIN.path}`,{
                   email,
                   password
-                },{authenticate:ApiRoutes.SIGNIN.auth})
+                })
                 if(res.status === 200){
                     sessionStorage.setItem('token',res.data.token);
                     sessionStorage.setItem('role',res.data.payload.role);

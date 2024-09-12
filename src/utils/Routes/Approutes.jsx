@@ -89,10 +89,12 @@ export default [
         path: "/addBooks",
         element: (
             <>
+            <AdminGuard>
                 <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
                     <Sidebar />
                     <AddBooks />
                 </div>
+            </AdminGuard>
             </>
         )
     },
@@ -111,10 +113,12 @@ export default [
         path: "/updateBooks",
         element: (
             <>
+            <AdminGuard>
                 <div className="flex flex-row gap-x-4 bg-[#f0eeee]">
                     <Sidebar />
                     <UpdateBookInfo />
                 </div>
+            </AdminGuard>
             </>
         )
     },
